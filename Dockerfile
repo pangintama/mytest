@@ -1,6 +1,4 @@
-
-   
-FROM alpine:3.12
+FROM image.ankr.com/library/alpine:3.12
 RUN apk add --no-cache ca-certificates git git-lfs openssh curl perl aws-cli sudo
 
 ADD ./hello /usr/local/bin/
