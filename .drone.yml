@@ -9,7 +9,7 @@ steps:
 
 - name: publish
   #image: plugins/docker
-  image: image.ankr.com/library/docke
+  image: image.ankr.com/library/docker
   settings:
     repo: image.ankr.com/library/hello
     registry: image.ankr.com
