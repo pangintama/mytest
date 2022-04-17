@@ -1,0 +1,19 @@
+kind: pipeline
+name: default
+
+steps:
+- name: test
+  image: golang
+  commands:
+  - go build
+
+- name: publish
+  image: plugins/docker
+  settings:
+    repo: image.ankr.com/library/hello
+    registry: image.ankr.com
+    tags: [ latest, 1.0, 1 ]
+    username:
+      from_secret: dockeruser
+    password:
+      from_secret: dockerpasswd
