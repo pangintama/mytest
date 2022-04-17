@@ -8,7 +8,8 @@ steps:
   - go build
 
 - name: publish
-  image: plugins/docker
+  #image: plugins/docker
+  image: image.ankr.com/library/docke
   settings:
     repo: image.ankr.com/library/hello
     registry: image.ankr.com
