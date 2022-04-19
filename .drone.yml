@@ -8,8 +8,8 @@ steps:
   - go build
 
 - name: publish
-  #image: plugins/docker
-  image: image.ankr.com/library/docker
+  image: plugins/docker:linux-amd64
+  #image: image.ankr.com/library/docker
   settings:
     repo: image.ankr.com/library/hello1
     registry: image.ankr.com
