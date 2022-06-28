@@ -7,14 +7,15 @@ steps:
   commands:
   - go build
 
-- name: publish
-  image: plugins/docker:linux-amd64
-  #image: image.ankr.com/library/docker
+- name: deploy
+  image: drillster/drone-rsync
   settings:
-    repo: image.ankr.com/library/hello1
-    registry: image.ankr.com
-    tags: [ latest, 1.0, 1 ]
-    username:
-      from_secret: dockeruser
-    password:
-      from_secret: dockerpasswd
+    hosts: [ "103.23.44.17" ]
+    source: ./*
+    target: /mnt
+    key:
+      from_secret: ssh_rsa
+    recursive: true
+    script:
+      - ls /mnt
+
